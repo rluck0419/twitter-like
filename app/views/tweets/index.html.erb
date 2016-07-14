@@ -1,4 +1,3 @@
-<h1>Twitter</h1>
 <% tweets.each do |t| %>
   <div><%= User.find(t.user_id).name %></div>
   <div><%= t.body %></div>
