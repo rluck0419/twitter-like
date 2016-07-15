@@ -1,4 +1,4 @@
-<% tweets.each do |t| %>
-  <div><%= User.find(t.user_id).name %></div>
+<% tweets.shuffle.each do |t| %>
+  <div><%= t.user.name %></div>
   <div><%= t.body %></div>
 <% end %>
