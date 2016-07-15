@@ -1,11 +1,17 @@
-<h4>USER:</h4>
-<div><%= user.handle %></div>
-<div><%= user.name %></div>
-<div>TWEETS:</div>
+<span class='user-block'>
+  <%= link_to(user.name, "users/#{user.id}") %>
+  <%= link_to("@" + user.handle, "users/#{user.id}") %>
+</span>
 
-
-<% user.tweets.each do |t| %>
-  <div><%= user.handle %></div>
-  <div><%= t.body %></div>
-<% end %>
-</div>
+<span class='tweet-block'>
+  <% user.tweets.each do |t| %>
+    <div class='tweet-in-list'>
+      <div>
+        <%= link_to(user.name, "users/#{user.id}") %>
+        <%= link_to("@" + user.handle, "users/#{user.id}") %>
+      </div>
+      <div><%= link_to(t.body, "/tweets/#{t.id}", class: 'tweet-text') %></div>
+      <div class=button><%= link_to("Show Tweet", "/tweets/#{t.id}", class: 'tweet-button') %></div>
+    </div>
+  <% end %>
+</span>
