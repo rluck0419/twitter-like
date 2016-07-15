@@ -1,2 +1,51 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import "nav";
+
+.bod {
+    background-color: #F5F8FA;
+}
+
+.tweet-section {
+  background-color: white;
+  margin: 1em;
+  display: inline-block;
+  min-width: 250px;
+  width: 20%;
+  height: 15em;
+  border: solid black 0.1em;
+  border-radius: 1em;
+  vertical-align: top;
+  box-shadow: .1em .1em .1em .1em lightblue;
+  transition: all 0.4s ease;
+  &:hover {
+    box-shadow: 0em 0.7em 2em lightblue;
+    transition: all 0.4s ease;
+  }
+}
+
+.tweeter {
+  padding: 1em 0 0 1em;
+  font-size: 1em;
+}
+
+.tweet-bod {
+  padding-left: .5em;
+}
+
+.tweet-text {
+  text-decoration: none;
+  color: black;
+  &:hover {
+    text-decoration: none;
+    color: black;
+  }
+}
+
+.tweet-button {
+  padding: 0.5em;
+  margin: 3em 1em;
+  border: solid black 0.1em;
+  border-radius: 0.5em;
+  display: flex;
+}

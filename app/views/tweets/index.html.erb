@@ -1,4 +1,10 @@
 <% tweets.each do |t| %>
-  <div><%= t.user.handle %></div>
-  <div><%= t.body %></div>
+  <span class='tweet-section'>
+    <div class='tweeter'>
+      <%= link_to(t.user.name, "users/#{t.user.id}") %>
+      <%= link_to("@" + t.user.handle, "users/#{t.user.id}") %>
+    </div>
+    <div class='tweet-bod'><%= link_to(t.body, "tweets/#{t.id}", class: 'tweet-text') %></div>
+    <div class=button><%= link_to("Show Tweet", "tweets/#{t.id}", class: 'tweet-button') %></div>
+  </span>
 <% end %>

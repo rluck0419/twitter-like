@@ -8,8 +8,10 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
-    <div class="container"><h1>Twitter</h1></div>
+  <body class='bod'>
+    <nav class=twitter-header>
+      <%= render "shared/nav" %>
+    </nav>
     <%= yield %>
   </body>
 </html>

@@ -1,0 +1,16 @@
+.title {
+  margin: 34%;
+}
+
+.nav-bar {
+  color: #1DA1F2;
+  background-color: white;
+  padding: 0.5em;
+}
+
+.home {
+  color: grey;
+  &:hover {
+    color: #1DA1F2;
+  }
+}
