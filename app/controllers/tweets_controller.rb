@@ -22,7 +22,7 @@ class TweetsController < ApplicationController
     tweet.body = params[:tweet][:body]
     tweet.user_id = params[:tweet][:user_id]
     tweet.save
-    redirect_to "tweets/#{tweets.id}"
+    redirect_to "/tweets/#{tweet.id}"
   end
 
   def destroy

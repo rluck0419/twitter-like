@@ -23,7 +23,22 @@ class UsersController < ApplicationController
     user.handle = params[:user][:handle]
     user.email = params[:user][:email]
     user.save
-    redirect_to "users/#{user.id}"
+    redirect_to "/users/#{user.id}"
+  end
+
+  def edit
+    render locals: {
+      user: User.find(params[:id])
+    }
+  end
+
+  def update
+    user = User.find(params[:id])
+    user.name = params[:user][:name]
+    user.handle = params[:user][:handle]
+    user.email = params[:user][:email]
+    user.save
+    redirect_to "/users/#{user.id}"
   end
 
   def destroy

@@ -1,2 +1,19 @@
-<div><%= tweet.user.name %></div>
-<div><%= tweet.body %></div>
+<div class='col-sm-4'>
+  <span class='user-block'>
+    <%= link_to(tweet.user.name, "/users/#{tweet.user.id}") %>
+    <%= link_to("@" + tweet.user.handle, "/users/#{tweet.user.id}") %>
+  </span>
+</div>
+
+<div class='col-sm-8'>
+  <span class='tweet-block'>
+    <div class='tweet-in-list'>
+      <div>
+        <%= link_to(tweet.user.name, "/users/#{tweet.user.id}") %>
+        <%= link_to("@" + tweet.user.handle, "/users/#{tweet.user.id}") %>
+      </div>
+      <div><%= link_to(tweet.body, "/tweets/#{tweet.id}", class: 'tweet-text') %></div>
+      <div class=button><%= link_to("Show Tweet", "/tweets/#{tweet.id}", class: 'tweet-button') %></div>
+    </div>
+  </span>
+</div>
