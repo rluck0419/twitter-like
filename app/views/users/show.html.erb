@@ -1,0 +1,11 @@
+<h4>USER:</h4>
+<div><%= user.handle %></div>
+<div><%= user.name %></div>
+<div>TWEETS:</div>
+
+
+<% user.tweets.each do |t| %>
+  <div><%= user.handle %></div>
+  <div><%= t.body %></div>
+<% end %>
+</div>
