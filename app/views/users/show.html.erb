@@ -7,7 +7,12 @@
     </span>
   </div>
 
-  <div class='col-md-8'><div class='tweet-in-list'><%= link_to("Tweet", new_tweet_path(Tweet.new(user_id:user.id)), class: 'edit-button') %></div></div>
+  <div class='col-md-8'>
+    <div class='tweet-in-list'>
+      What's happening?
+      <%= link_to("Tweet something new...", new_tweet_path(Tweet.new(user_id:user.id)), class: 'edit-button') %>
+    </div>
+  </div>
   <div class='col-md-8'>
     <% user.tweets.each do |t| %>
       <div class='tweet-in-list'>
