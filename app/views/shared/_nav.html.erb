@@ -1,7 +1,8 @@
-<div>
+<div class='nav'>
   <h2 class='nav-bar'>
-    <span><%= link_to("Home", root_path, class: 'home') %></span>
-    <span class='title'>Twitter</span>
+    <span class='col-md-1'><%= link_to("Home", root_path, class: 'home') %></span>
+    <span class='col-md-1'><%= link_to("Users", "/users", class: 'home') %></span>
+    <span class='title col-md-10'>Twitter</span>
     <!-- <span><%= link_to("Followers", users_path, class: 'followers') %></span> -->
   </h2>
 </div>

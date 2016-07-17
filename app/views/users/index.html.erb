@@ -1,5 +1,29 @@
-<% users.each do |u| %>
-  <h4>USER:</h4>
-  <div><%= u.handle %></div>
-  <div><%= u.name %></div>
-<% end %>
+
+<div class='row'>
+  <div class='col-md-3'>
+    <span class='user-block'>
+      <div><%= link_to(users[0].name, "/users/#{users[0].id}") %></div>
+      <div><%= link_to("@" + users[0].handle, "/users/#{users[0].id}") %></div>
+      <div><%= link_to("Edit", edit_user_path(users[0]), class: 'edit-button') %></div>
+    </span>
+  </div>
+
+  <div class='col-md-6'>
+    <% users.each do |u| %>
+      <div class='tweet-in-list'>
+        <div>
+          <%= link_to(u.name, "/users/#{u.id}") %>
+          <%= link_to("@" + u.handle, "/users/#{u.id}") %>
+        </div>
+        <div><%= link_to(u.tweets[-1], "/tweets/#{u.tweets[-1]}", class: 'tweet-text') %></div>
+        <div class=button><%= link_to("Show Tweet", "/tweets/#{u.tweets[-1]}", class: 'tweet-button') %></div>
+      </div>
+    <% end %>
+  </div>
+
+  <div class='col-md-3'>
+    <div class='user-block'>
+      Who to follow:
+    </div>
+  </div>
+</div>

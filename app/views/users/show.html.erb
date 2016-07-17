@@ -1,5 +1,5 @@
 <div class='row'>
-  <div class='col-md-4'>
+  <div class='col-md-3'>
     <span class='user-block'>
       <div><%= link_to(user.name, "/users/#{user.id}") %></div>
       <div><%= link_to("@" + user.handle, "/users/#{user.id}") %></div>
@@ -7,14 +7,12 @@
     </span>
   </div>
 
-  <div class='col-md-8'>
+  <div class='col-md-6'>
     <div class='tweet-in-list'>
       What's happening?
       <%= link_to("Tweet something new...", new_tweet_path(Tweet.new(user_id:user.id)), class: 'edit-button') %>
     </div>
-  </div>
-  <div class='col-md-8'>
-    <% user.tweets.each do |t| %>
+    <% user.tweets.reverse.each do |t| %>
       <div class='tweet-in-list'>
         <div>
           <%= link_to(user.name, "/users/#{user.id}") %>
@@ -24,5 +22,11 @@
         <div class=button><%= link_to("Show Tweet", "/tweets/#{t.id}", class: 'tweet-button') %></div>
       </div>
     <% end %>
+  </div>
+
+  <div class='col-md-3'>
+    <div class='user-block'>
+      Check out these other tweeters!
+    </div>
   </div>
 </div>

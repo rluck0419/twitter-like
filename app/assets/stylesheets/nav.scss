@@ -1,16 +1,27 @@
 .title {
-  margin: 34%;
+  text-align: center;
+  padding-bottom: 0.1em;
+}
+
+.home {
+  color: grey;
+  padding: 0 0.5em;
+  margin: 0 0.5em;
+  float: left;
+  transition: 0.2s ease;
+  &:hover {
+    color: #1DA1F2;
+    transition: 0.2s ease;
+    text-decoration: none;
+    border-bottom: 0.1em solid #1DA1F2;
+  }
 }
 
 .nav-bar {
   color: #1DA1F2;
   background-color: white;
-  padding: 0.5em;
 }
 
-.home {
-  color: grey;
-  &:hover {
-    color: #1DA1F2;
-  }
+.nav {
+  background-color: white;
 }
