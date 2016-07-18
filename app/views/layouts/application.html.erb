@@ -12,6 +12,8 @@
     <nav class=twitter-header>
       <%= render "shared/nav" %>
     </nav>
+    <%= flash[:alert] %>
+    <%= flash[:notice] %>
     <%= yield %>
   </body>
 </html>
