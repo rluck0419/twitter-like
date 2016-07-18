@@ -1,10 +1,12 @@
-
 <div class='row'>
   <div class='col-md-3'>
     <span class='user-block'>
       <div><%= link_to(users[0].name, "/users/#{users[0].id}") %></div>
       <div><%= link_to("@" + users[0].handle, "/users/#{users[0].id}") %></div>
-      <div><%= link_to("Edit", edit_user_path(users[0]), class: 'edit-button') %></div>
+      <div class='user-butts'>
+        <div><%= link_to("Edit Profile", edit_user_path(users[0]), class: 'edit-button') %></div>
+        <div><%= link_to("Delete Profile", user_path(users[0]), class: 'edit-button', method: :delete, data: { confirm: 'Are you sure you want to delete this user?' }) %></div>
+      </div>
     </span>
   </div>
 
@@ -15,15 +17,28 @@
           <%= link_to(u.name, "/users/#{u.id}") %>
           <%= link_to("@" + u.handle, "/users/#{u.id}") %>
         </div>
-        <div><%= link_to(u.tweets[-1], "/tweets/#{u.tweets[-1]}", class: 'tweet-text') %></div>
-        <div class=button><%= link_to("Show Tweet", "/tweets/#{u.tweets[-1]}", class: 'tweet-button') %></div>
+        <% u.tweets.reverse.each do |t| %>
+          <%= "last tweeted: " %>
+          <div><%= t.body %></div>
+          <div class='button'><%= link_to("Show Tweet", "/tweets/#{t.id}", class: 'tweet-button') %></div>
+          <div class='button'><%= link_to("Delete Tweet", tweet_path(t), class: 'tweet-button', method: :delete, data: { confirm: 'Are you sure you want to delete this tweet?' }) %></div>
+          <% break %>
+        <% end %>
+        <!-- <div><%= link_to(u.tweets[-1].class, "/tweets/#{u.tweets[-1].class}", class: 'tweet-text') %></div> -->
+        <!-- <div class=button><%= link_to("Show Tweet", "/tweets/#{u.tweets[-1]}", class: 'tweet-button') %></div> -->
       </div>
     <% end %>
   </div>
 
   <div class='col-md-3'>
-    <div class='user-block'>
-      Who to follow:
+    <div class='recs-block'>
+      <div class='rec'>Followers:</div>
+      <% users.each do |u| %>
+        <div class='user-rec-row'>
+          <%= link_to(u.name, "/users/#{u.id}") %>
+          <%= link_to("@" + u.handle, "/users/#{u.id}") %>
+        </div>
+      <% end %>
     </div>
   </div>
 </div>

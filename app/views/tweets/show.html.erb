@@ -1,8 +1,12 @@
 <div class='row'>
   <div class='col-sm-3'>
     <span class='user-block'>
-      <%= link_to(tweet.user.name, "/users/#{tweet.user.id}") %>
-      <%= link_to("@" + tweet.user.handle, "/users/#{tweet.user.id}") %>
+      <div><%= link_to(tweet.user.name, "/users/#{tweet.user.id}") %></div>
+      <div><%= link_to("@" + tweet.user.handle, "/users/#{tweet.user.id}") %></div>
+      <div class='user-butts'>
+        <div><%= link_to("Edit Profile", edit_user_path(tweet.user), class: 'edit-button') %></div>
+        <div><%= link_to("Delete Profile", user_path(tweet.user), class: 'edit-button', method: :delete, data: { confirm: 'Are you sure you want to delete this user?' }) %></div>
+      </div>
     </span>
   </div>
 
@@ -14,14 +18,21 @@
           <%= link_to("@" + tweet.user.handle, "/users/#{tweet.user.id}") %>
         </div>
         <div><%= link_to(tweet.body, "/tweets/#{tweet.id}", class: 'tweet-text') %></div>
-        <div class=button><%= link_to("Show Tweet", "/tweets/#{tweet.id}", class: 'tweet-button') %></div>
+        <div class='button'><%= link_to("Show Tweet", "/tweets/#{tweet.id}", class: 'tweet-button') %></div>
+        <div class='button'><%= link_to("Delete Tweet", tweet_path(tweet), class: 'tweet-button', method: :delete, data: { confirm: 'Are you sure you want to delete this tweet?' }) %></div>
       </div>
     </span>
   </div>
 
   <div class='col-sm-3'>
-    <div class='user-block'>
-      Checkout these tweeters:
+    <div class='recs-block'>
+      <div class='rec'>Followers:</div>
+      <% users.each do |u| %>
+        <div class='user-rec-row'>
+          <%= link_to(u.name, "/users/#{u.id}") %>
+          <%= link_to("@" + u.handle, "/users/#{u.id}") %>
+        </div>
+      <% end %>
     </div>
   </div>
 </div>

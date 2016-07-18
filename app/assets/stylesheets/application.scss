@@ -52,6 +52,12 @@
   float: right;
   font-size: 0.8em;
   margin-right: 1em;
+  transition: all 0.4s ease;
+  &:hover{
+    text-decoration: none;
+    background-color: lightblue;
+    transition: all 0.4s ease;
+  }
 }
 
 .tweet-button2 {
@@ -66,6 +72,28 @@
 .user-block {
   display: inline-block;
   padding: 1em;
+  margin: 1em;
+  width: 92.5%;
+  height: 160px;
+  vertical-align: top;
+  border: solid black 0.1em;
+  border-radius: 0.5em;
+  background-color: white;
+  box-shadow: .1em .1em .1em .1em lightblue;
+  transition: all 0.4s ease;
+  &:hover {
+    box-shadow: 0em 0.7em 2em lightblue;
+    transition: all 0.4s ease;
+  }
+  .user-butts {
+    margin-top: 5em;
+    text-decoration: none;
+  }
+}
+
+.recs-block {
+  display: inline-block;
+  padding: 1em 0em;
   margin: 1em;
   width: 92.5%;
   height: 500px;
@@ -101,9 +129,30 @@
 }
 
 .edit-button {
-    font-size: 0.8em;
-    float:right;
-    padding: 0.25em 0.5em;
-    border: solid black 0.1em;
-    border-radius: 0.5em;
+  font-size: 0.8em;
+  float:right;
+  padding: 0.25em 0.5em;
+  border: solid black 0.1em;
+  border-radius: 0.5em;
+  margin: 0 0.5em;
+  transition: all 0.4s ease;
+  &:hover{
+    text-decoration: none;
+    background-color: lightblue;
+    transition: all 0.4s ease;
   }
+}
+
+.user-row {
+  padding: 2em 0;
+  border-top: 0.1em solid black;
+}
+
+.user-rec-row {
+  padding: 1em 1em 2em 1em;
+  border-top: 0.1em solid black;
+}
+
+.rec {
+  padding: 0 1em 0.5em;
+}

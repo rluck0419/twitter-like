@@ -5,7 +5,7 @@ class TweetsController < ApplicationController
 
   def show
     if Tweet.exists?(params[:id])
-      render template: 'tweets/show.html.erb', locals: { tweet: Tweet.find(params[:id]) }
+      render template: 'tweets/show.html.erb', locals: { tweet: Tweet.find(params[:id]), users: User.all }
     else
       render html: 'Tweet not found', status: 404
     end
@@ -29,7 +29,7 @@ class TweetsController < ApplicationController
     if Tweet.exists?(params[:id])
       Tweet.destroy(params[:id])
       flash[:notice] = "Tweet destroyed."
-      redirect_to "tweets"
+      redirect_to "/tweets"
     else
       flash[:alert] = "There was an error. Please try again."
     end
